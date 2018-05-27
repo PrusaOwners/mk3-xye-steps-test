@@ -86,30 +86,30 @@ gcodeList.append("G1 Z" + str(zPos) + " F10200.000")
 gcodeList.append("G1 F" + str(printSpeed * 60))
 
 # For each layer...
-for z in range(1, int(loopCountZ)):
+for z in range(0, int(loopCountZ)):
     # Front Side
-    for x in range(1, int(loopCountX)):
+    for x in range(0, int(loopCountX)):
         xPos += xDistancePerStep * xStepsPerEStep
         gcodeList.append("G1 X" + str(xPos) + " E" + str(eDistancePerStep))
     
     # Right Side
-    for y in range(1, int(loopCountY)):
+    for y in range(0, int(loopCountY)):
         yPos += yDistancePerStep * yStepsPerEStep
         gcodeList.append("G1 Y" + str(yPos) + " E" + str(eDistancePerStep))
         
     # Back Side
-    for x in range(int(loopCountX), 1, -1):
+    for x in range(int(loopCountX), 0, -1):
         xPos -= xDistancePerStep * xStepsPerEStep
         gcodeList.append("G1 X" + str(xPos) + " E" + str(eDistancePerStep))
     
     # Left Side
-    for y in range(int(loopCountY), 1, -1):
+    for y in range(int(loopCountY), 0, -1):
         yPos -= yDistancePerStep * yStepsPerEStep
         gcodeList.append("G1 Y" + str(yPos) + " E" + str(eDistancePerStep))
 
     # Do a layer change and set print/fan speed
     zPos += layerHeight
-    gcodeList.append("G1 Z " + str(zPos) + " F10200.000")
+    gcodeList.append("G1 Z" + str(zPos) + " F10200.000")
     gcodeList.append("G1 F" + str(printSpeed * 60))
     gcodeList.append("M106 S" + str(fanSpeed))
 
