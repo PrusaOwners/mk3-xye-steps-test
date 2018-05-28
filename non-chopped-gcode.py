@@ -10,9 +10,9 @@ xStepsPerEStep = 11
 yStepsPerEStep = 11
 
 # Desired cube size in mm
-cubeX = 50
-cubeY = 50
-cubeZ = 50
+cubeX = 20
+cubeY = 20
+cubeZ = 20
 
 # Layer height, if you change this from 0.2
 # you'll need to figure out all the values above.
