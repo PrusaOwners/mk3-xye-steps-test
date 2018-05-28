@@ -80,9 +80,10 @@ M84 ; disable motors"""
 # List to hold our generated lines
 gcodeList = []
 
-# Move everything to the correct position
-gcodeList.append("G1 X" + str(xPos) + " Y" + str(yPos) + " F10200.000")
-gcodeList.append("G1 Z" + str(zPos) + " F10200.000")
+# Retract and move everything to the correct position
+gcodeList.append("G1 E-0.8 F2100.00000")
+gcodeList.append("G1 X" + str(xPos) + " Y" + str(yPos) + " Z" + str(zPos) + " F10200.000")
+gcodeList.append("G1 E0.80000 F2100.00000");
 gcodeList.append("G1 F" + str(printSpeed * 60))
 
 # For each layer...
