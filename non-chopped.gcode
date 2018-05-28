@@ -21,8 +21,9 @@ M900 K0; Filament gcode
 G21 ; set units to millimeters
 G90 ; use absolute coordinates
 M83 ; use relative distances for extrusion
-G1 X100 Y100 F10200.000
-G1 Z0.2 F10200.000
+G1 E-0.8 F2100.00000
+G1 X100 Y100 Z0.2 F10200.000
+G1 E0.80000 F2100.00000
 G1 F2100
 G1 X119.91 E0.64617
 G1 Y119.91 E0.64617
